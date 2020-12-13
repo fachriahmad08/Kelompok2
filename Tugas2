@@ -1,0 +1,111 @@
+import java.util.*;
+
+public class RekayasaPerangkatLunak{
+	public static void main(String[] args) {
+		
+		Scanner in = new Scanner(System.in);
+
+		int reguler = 10000; // sengaja memilih int, karna bilangan bulat, dan mudah untuk kalibata(kali,bagi,tambah,kurang);
+		int express = 25000; // sengaja memilih int, karna bilangan bulat, dan mudah untuk kalibata(kali,bagi,tambah,kurang);
+		
+		System.out.println("Program Laundry");
+		System.out.println("Dibuat oleh Fachri/1402018016");
+		System.out.println("*****************************");
+		System.out.println("Jenis Layanan: ");
+		System.out.println("1. Cuci Komplit Reguler 	Tarif/Kg = Rp. 10000");
+		System.out.println("2. Cuci Komplit Express 	Tarif/Kg = Rp. 25000");
+		System.out.print("Pilihan: ");
+		int pilihan = in.nextInt(); // karna inputannya berupa angka
+
+		switch(pilihan) { // ketika diinput dengan angka 1, maka akan dijalankan
+			case 1:
+			System.out.println("*****************************");
+			System.out.print("Nama Pelanggan: ");
+			String namaPelanggan = in.next(); // karna inputannya berupa kata(String)
+			System.out.print("Berat Cucian: ");
+			int beratCucian = in.nextInt();
+			int totalPembayaran = beratCucian * reguler;
+			int diskon10 = (totalPembayaran - (totalPembayaran*10/100));
+			int hasilDiskon = (diskon10 - (diskon10*15/100));
+			//hasil-hasil penjumlahan diatas, adalah untuk mengetahui harga diskon yang didapatkan
+
+			System.out.println("Apakah anda mempunyai kartu member? (Yes/No)");
+			String kartuMember = in.next();// alasan menggunakan string, karna yang diinput bukan angka
+
+			// menggunakan struktur if else, karna dihint soal sudah dib eritahu ada kata (jika)
+			if (kartuMember.equalsIgnoreCase("Yes")) {
+				System.out.println("Selamat anda mendapatkan diskon member 10%");
+
+			
+			if (beratCucian > 15) {
+					System.out.println("Selamat anda mendapatkan diskon member 15%");
+					System.out.println("Total Pembayaran = Rp. " + hasilDiskon);
+				}
+			}
+			else if (kartuMember.equalsIgnoreCase("No")) {
+					System.out.println("*****************************");
+			if (beratCucian > 15) { // berat cuciannya lebih dari 15, maka akan dijalankan,jika tidak, dia bakal ke else if
+					System.out.println("Selamat anda mendapatkan diskon member 15%");
+					System.out.println("Total Pembayaran = Rp. " +  (totalPembayaran - (totalPembayaran*15/100)));
+				}
+			else if (beratCucian < 15) {
+					System.out.println("Total pembayaran = Rp. " + totalPembayaran);
+				}
+			}
+			else {
+				System.out.println("*****************************");
+				System.out.println("Selamat anda mendapatkan potongan diskon 15%");
+				System.out.println("Total pembayaran = Rp. " + (totalPembayaran - (totalPembayaran*15/100)));
+			}
+
+		break;
+		}
+		switch(pilihan){// ketika diinput dengan angka 3, maka akan dijalankan
+			case 3:
+			System.out.println("Maaf Pilihan anda tidak tersedia");
+		}
+		switch (pilihan) {// ketika diinput dengan angka 12, maka akan dijalankan
+			case 2:
+			System.out.println("*****************************");
+			System.out.print("Nama Pelanggan: ");
+			String namaPelanggan2 = in.next();
+			System.out.print("Berat Cucian: ");
+			int beratCucian2 = in.nextInt();
+			int totalPembayaran2 = beratCucian2 * express;
+			int diskonSepuluh = (totalPembayaran2 - (totalPembayaran2*10/100));
+			int hasilDiskonan = (diskonSepuluh - (diskonSepuluh*15/100));
+
+			System.out.println("Apakah anda mempunyai kartu member? (Yes/No)");
+			String kartuMember2 = in.next();
+
+			if (kartuMember2.equalsIgnoreCase("Yes")) {
+				System.out.println("Selamat anda mendapatkan diskon member 10%");
+			
+			if (beratCucian2 > 15) {
+					System.out.println("Selamat anda mendapatkan diskon member 15%");
+					System.out.println("Total Pembayaran = Rp. " + hasilDiskonan);
+				}
+				else if (beratCucian2 < 15) {
+					System.out.println("Total pembayaran = Rp. " + (totalPembayaran2 - (totalPembayaran2*10/100))); // hasil dari kalibata diskon
+				}
+			}
+				else if (kartuMember2.equalsIgnoreCase("No")) {
+					System.out.println("*****************************");
+			if (beratCucian2 > 15) { //jika beratcucian2 lebih besar dari 15, maka akan dijalankan, jika tidak, dia akan ke else if
+					System.out.println("Selamat anda mendapatkan diskon member 15%");
+					System.out.println("Total Pembayaran = Rp. " +  (totalPembayaran2 - (totalPembayaran2*15/100))); // hasil dari kalibata diskon
+				}else if (beratCucian2 < 15) {
+					System.out.println("Total pembayaran = Rp. " + totalPembayaran2); // hasil dari kalibata diskon
+				}
+			}else {
+				System.out.println("*****************************");
+				System.out.println("Selamat anda mendapatkan diskon 15%");
+				System.out.println("Total pembayaran = Rp. " + (totalPembayaran2 - (totalPembayaran2*15/100))); // hasil dari kalibata diskon
+			}
+
+		
+		}
+
+}
+
+	}
