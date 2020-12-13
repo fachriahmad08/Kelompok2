@@ -4,7 +4,10 @@ public class RekayasaPerangkatLunak{
 	public static void main(String[] args) {
 		
 		Scanner in = new Scanner(System.in);
-
+		
+		/*Pencucian Reguler = biasa, seperti baju,kemeja(Berbahan soft lainnya/lembut), dll
+		  Pencucian Express = Karpet, Boneka(Sulit dicuci), dll
+		*/
 		int reguler = 10000; // sengaja memilih int, karna bilangan bulat, dan mudah untuk kalibata(kali,bagi,tambah,kurang);
 		int express = 25000; // sengaja memilih int, karna bilangan bulat, dan mudah untuk kalibata(kali,bagi,tambah,kurang);
 		
